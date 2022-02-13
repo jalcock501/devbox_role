@@ -1,0 +1,11 @@
+---
+# Variable importing from vars/
+# You can have distro family variables files, and distro-specific variables
+# e.g. Ubuntu.yml, and distro version-specific variables like Ubuntu_18.04.yml
+# Files that don't exist will be ignored.
+- name: Read distro family variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+# install all pip packages from vars
+- name: Install Pip Packages
+  include_tasks: install_pip_packages.yml

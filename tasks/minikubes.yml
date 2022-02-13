@@ -1,0 +1,21 @@
+---
+- name: Install Prerequisite Packages
+  package:
+    name: "{{ prereq_packages }}"
+    update_cache: true
+    state: present
+
+# install virtualbox for Minikube virtualisation
+- name: install virtualbox
+  apt_repository:
+    repo: deb https://download.virtualbox.org/virtualbox/debian stable main
+    state: present
+
+# get minikube file
+- name: get minikube
+  get_url:
+    url: https://github.com/kubernetes/minikube/releases/download/v1.25.1/minikube_1.25.1-0_amd64.deb
+    dest: /tmp/minikube-1.25.1.amd64.deb
+
+- name: install minikube
+  apt: deb="/tmp/minikube-1.25.1.amd64.deb"

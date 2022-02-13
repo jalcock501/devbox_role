@@ -1,0 +1,10 @@
+---
+prereq_packages:
+  -
+
+prereq_pip_packages:
+  - cookiecutter
+  - pytest
+  - autopep8
+  - pytest-pylint
+  - poetry

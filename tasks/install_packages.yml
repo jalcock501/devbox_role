@@ -1,0 +1,6 @@
+---
+- name: Install Prerequisite Packages
+  package:
+    name: "{{ prereq_packages }}"
+    update_cache: true
+    state: present

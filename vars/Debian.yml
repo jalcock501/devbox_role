@@ -3,6 +3,7 @@ prereq_packages:
   - wget
   - curl
   - apt-transport-https
+  - python3-pip
 
 prereq_pip_packages:
   - cookiecutter

@@ -1,10 +1,4 @@
 ---
-- name: Install Prerequisite Packages
-  package:
-    name: "{{ prereq_packages }}"
-    update_cache: true
-    state: present
-
 # install virtualbox for Minikube virtualisation
 - name: install virtualbox
   apt_repository:

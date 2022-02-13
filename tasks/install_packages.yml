@@ -1,4 +1,12 @@
 ---
+# apt update && upgrade
+- name: Update Upgrade
+  apt:
+    upgrade: yes
+    update_cache: true
+    cache_valid_time: 86400
+
+# name says it all
 - name: Install Prerequisite Packages
   package:
     name: "{{ prereq_packages }}"

@@ -4,6 +4,9 @@ prereq_packages:
   - curl
   - apt-transport-https
   - python3-pip
+  - ca-certificates
+  - gnupg
+  - lsb-release
 
 prereq_pip_packages:
   - cookiecutter

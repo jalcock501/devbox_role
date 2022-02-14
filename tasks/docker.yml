@@ -7,7 +7,7 @@
 
 - name: add Docker repo
   apt_repository:
-    repo: https://download.docker.com/linux/debian main stable
+    repo: https://download.docker.com/linux/debian focal stable
     state: present
 
 - name: install Docker

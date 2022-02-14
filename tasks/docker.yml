@@ -7,7 +7,7 @@
 
 - name: add Docker repo
   apt_repository:
-    repo: https://download.docker.com/linux/debian focal stable
+    repo: deb https://download.docker.com/linux/debian focal stable
     state: present
 
 - name: install Docker
@@ -16,3 +16,32 @@
     update_cache: true
     state: present
   loop: docker_packages
+
+- name: check docker is active
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+# Docker user setup
+- name: Ensure group "docker" exists
+  ansible.builtin.group:
+    name: docker
+    state: present
+- name: add debian to docker group
+  user:
+    name: debian 
+    groups: docker
+    append: yes
+
+# install docker compose
+- name: install docker-compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64
+    dest: /usr/local/bin/docker-compose
+    mode: 'u+x,g+x'
+- name: Change file ownership, group and permissions
+  ansible.builtin.file:
+    path: /usr/local/bin/docker-compose
+    owner: ubuntu
+    group: ubuntu

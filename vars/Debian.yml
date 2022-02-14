@@ -14,3 +14,8 @@ prereq_pip_packages:
   - autopep8
   - pytest-pylint
   - poetry
+
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io

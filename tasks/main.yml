@@ -13,3 +13,7 @@
 # install all pip packages from vars
 - name: Install Pip Packages
   include_tasks: install_pip_packages.yml
+
+# install docker
+- name: Docker install
+  include_tasks: docker.yml

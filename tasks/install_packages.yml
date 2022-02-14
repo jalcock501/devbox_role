@@ -9,6 +9,7 @@
 # name says it all
 - name: Install Prerequisite Packages
   package:
-    name: "{{ prereq_packages }}"
+    name: "{{ item }}"
     update_cache: true
     state: present
+  loop: "{{ prereq_packages }}"

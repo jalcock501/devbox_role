@@ -13,8 +13,8 @@
 - name: install Docker
   apt:
     name: "{{ item }}"
+    state: latest
     update_cache: true
-    state: present
   loop: "{{ docker_packages }}"
 
 - name: check docker is active

@@ -7,7 +7,7 @@
 
 - name: add Docker repo
   apt_repository:
-    repo: deb https://download.docker.com/linux/debian {{ ansible_distrubution_release }} stable
+    repo: deb https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable
     state: present
 
 - name: install Docker

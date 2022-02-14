@@ -6,4 +6,5 @@
 
 - name: Install Packages
   pip:
-    name: "{{ prereq_pip_packages | join(' ') }}"
+    name: "{{ item }}"
+  loop: "{{ prereq_pip_packages }}"

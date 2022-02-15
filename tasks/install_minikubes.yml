@@ -8,3 +8,30 @@
 - name: install minikube
   become: true
   apt: deb="/tmp/minikube-1.25.1.amd64.deb"
+
+- name: start minikube
+  command: minikube start
+  register: command_output
+
+- debug:
+    var: command_output.stdout_lines
+
+# install kubectl
+- name: Get kubectl Key
+  become: true
+  apt_key:
+    state: present
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+- name: Get kubectl repo
+  become: true
+  apt_repository:
+    repo: https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+
+- name: Install kubectl
+  become: true
+  apt:
+    name: kubectl
+    state: present
+    update_cache: true

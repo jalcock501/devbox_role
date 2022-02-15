@@ -2,6 +2,7 @@
 # apt update && upgrade
 - name: Update Upgrade
   apt:
+    become: true
     upgrade: yes
     update_cache: true
     cache_valid_time: 86400
@@ -9,6 +10,7 @@
 # name says it all
 - name: Install Prerequisite Packages
   package:
+    become: true
     name: "{{ item }}"
     update_cache: true
     state: present

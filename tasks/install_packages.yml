@@ -1,7 +1,7 @@
 ---
 # Install python3-apt as it might not come as standard
 - name: install python3-apt
-  raw: sudo apt-get -y install python3-apt
+  raw: sudo apt -y install python3-apt
 
 # apt update && upgrade
 - name: Update Upgrade

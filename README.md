@@ -1,7 +1,7 @@
 # ROLE TO INSTALL REQUIRED MODULES FOR  DEVBOX
 ---
 
-Supported OS: Debian 10
+Supported OS: Debian 11
 
 ## Dependencies
 None

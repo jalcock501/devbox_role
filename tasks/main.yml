@@ -19,3 +19,6 @@
 # install docker
 - name: Docker install
   include_tasks: install_docker.yml
+
+- name: Minikube Install
+  include_tasks: install_minikubes.yml

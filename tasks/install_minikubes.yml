@@ -27,7 +27,7 @@
 - name: Get kubectl repo
   become: true
   apt_repository:
-    repo: https://apt.kubernetes.io/ kubernetes-xenial main
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
     state: present
 
 - name: Install kubectl

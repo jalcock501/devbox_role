@@ -11,14 +11,22 @@
 # install prerequisite packages
 - name: Install PreReq Packages
   include_tasks: install_packages.yml
+  tags:
+    - prereq
 
 # install all pip packages from vars
 - name: Install Pip Packages
   include_tasks: install_pip_packages.yml
+  tags:
+    - pip
 
 # install docker
 - name: Docker install
   include_tasks: install_docker.yml
+  tags:
+    - docker
 
 - name: Minikube Install
   include_tasks: install_minikubes.yml
+  tags:
+    - minikube

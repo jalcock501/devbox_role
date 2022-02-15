@@ -10,6 +10,7 @@
   apt: deb="/tmp/minikube-1.25.1.amd64.deb"
 
 - name: start minikube
+  become: false
   command: minikube start
   register: command_output
 

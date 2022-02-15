@@ -9,14 +9,6 @@
   become: true
   apt: deb="/tmp/minikube-1.25.1.amd64.deb"
 
-- name: start minikube
-  become: false
-  command: minikube start
-  register: command_output
-
-- debug:
-    var: command_output.stdout_lines
-
 # install kubectl
 - name: Get kubectl Key
   become: true
@@ -36,3 +28,12 @@
     name: kubectl
     state: present
     update_cache: true
+
+# Start Minikube
+- name: start minikube
+  become: false
+  command: minikube start
+  register: command_output
+
+- debug:
+    var: command_output.stdout_lines

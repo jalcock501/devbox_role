@@ -1,10 +1,4 @@
 ---
-# install virtualbox for Minikube virtualisation
-- name: install virtualbox
-  apt_repository:
-    repo: deb https://download.virtualbox.org/virtualbox/debian stable main
-    state: present
-
 # get minikube file
 - name: get minikube
   get_url:
@@ -12,4 +6,5 @@
     dest: /tmp/minikube-1.25.1.amd64.deb
 
 - name: install minikube
+  become: true
   apt: deb="/tmp/minikube-1.25.1.amd64.deb"

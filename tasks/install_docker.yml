@@ -30,7 +30,7 @@
     state: present
 - name: add debian to docker group
   user:
-    name: debian
+    name: "{{ ansible_ssh_user }}"
     groups: docker
     append: yes
 
@@ -43,5 +43,5 @@
 - name: Change file ownership, group and permissions
   ansible.builtin.file:
     path: /usr/local/bin/docker-compose
-    owner: debian
-    group: debian
+    owner: "{{ ansible_ssh_user }}"
+    group: "{{ ansible_ssh_user }}"

@@ -1,5 +1,6 @@
 ---
 prereq_packages:
+  - python3-api
   - wget
   - curl
   - apt-transport-https
